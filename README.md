@@ -1,1 +1,1 @@
-This file will describe the project and what the various bits of code do
+This project aims to display data about the circulating blood from first time myocardial infraction (AMI) patients withing 48 hours of MI. I am currently at the stage of making tables from the data I have downloaded from ncbi.nlm.nih.gov/geo and have written a working parser which extracts the data I need to make these tables. The parser contains comments as to what each part of code does and I plan to update this as I expand my knowledge on the code. UPDATED 10/02/2015
