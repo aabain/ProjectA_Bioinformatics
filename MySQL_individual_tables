@@ -15,10 +15,10 @@ mysql> LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE probe_info
     -> IGNORE 1 LINES
     -> (ID_ref, gene_ID); 
 
-mysql> CREATE TABLE expression_info (
-    -> sample_name VARCHAR(20) not null,
+mysql> CREATE TABLE expression1_info (
+    -> gene_ID VARCHAR(10) not null,
     -> ID_ref VARCHAR(10) not null, 
-    -> expression_value VARCHAR(20) not null
+    -> expression_value INTEGER(10) not null
     -> ); 
 
-mysql> LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression_info (sample_name, ID_ref, expression_value); 
+mysql> LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression1_info (gene_ID, ID_ref, expression_value); 
