@@ -4,7 +4,7 @@ mysql> CREATE TABLE gene_info (
     -> description VARCHAR(200) not null
     -> );
 
-mysql> LOAD DATA LOCAL INFILE 'genes.txt' INTO TABLE gene_info (gene_ID gene_symbol description); 
+mysql> LOAD DATA LOCAL INFILE 'genes.txt' INTO TABLE gene_info (gene_ID, gene_symbol, description); 
 
 mysql> CREATE TABLE probe_info (
     -> ID_ref VARCHAR(10) not null,
