@@ -22,3 +22,11 @@ mysql> CREATE TABLE expression1_info (
     -> ); 
 
 mysql> LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression1_info (gene_ID, ID_ref, expression_value); 
+
+mysql> CREATE TABLE sample_info (
+    -> gene_ID VARCHAR(10) not null,
+    -> Sample VARCHAR(200) not null, 
+    -> event_type VARCHAR(200) not null
+    -> );
+    
+mysql> LOAD DATA LOCAL INFILE 'samples.txt' INTO TABLE sample_info (gene_ID, Sample, event_type); 
