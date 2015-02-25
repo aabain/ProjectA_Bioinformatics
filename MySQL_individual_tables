@@ -5,6 +5,7 @@ mysql> CREATE TABLE gene_info (
     -> );
 
 mysql> LOAD DATA LOCAL INFILE 'genes.txt' INTO TABLE gene_info (gene_ID, gene_symbol, description); 
+-- This will produce a table in MySQL called 'gene_info' and will contain various fields (gene_ID, gene_symbol & a description of each gene). 
 
 mysql> CREATE TABLE probe_info (
     -> ID_ref VARCHAR(10) not null primary key,
@@ -15,6 +16,7 @@ mysql> CREATE TABLE probe_info (
 mysql> LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE probe_info
     -> IGNORE 1 LINES
     -> (ID_ref, gene_ID); 
+-- this acts as an intermediate table to combine the results with the information obtained from the genes.
 
 mysql> CREATE TABLE expression1_info (
     -> gene_ID VARCHAR(10) not null primary key,
@@ -24,6 +26,7 @@ mysql> CREATE TABLE expression1_info (
     -> ); 
 
 mysql> LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression1_info (gene_ID, ID_ref, expression_value); 
+-- This details the results of the experiment whilst being linked through probes to the gene_info table. 
 
 mysql> CREATE TABLE sample_info (
     -> gene_ID VARCHAR(10) not null,
@@ -33,3 +36,4 @@ mysql> CREATE TABLE sample_info (
     -> );
     
 mysql> LOAD DATA LOCAL INFILE 'samples.txt' INTO TABLE sample_info (gene_ID, Sample, event_type); 
+-- this table provides information of the variosu samples. This is linked to the expression table. 
