@@ -1,0 +1,7 @@
+import cgi
+import cgitb
+cgitb.enable()
+
+<form action=searchdb.py method=POST>
+SELECT * FROM gene_info WHERE gene_ID='GSM1'</td>
+</form>
