@@ -1,0 +1,8 @@
+import MySQL
+db=MySQL.connect(db="aabain", user="aabain", passwd="iIBcABdw")
+cursor=db.cursor()
+cursor.execute("SELECT sum(expression_value)/count(expression_value) FROM expression_info INNER JOIN sample_info ON expression_info.gene_ID=sample_info.gene_ID WHERE subset= ''")
+result=cursor.fetchall
+result
+
+print result
